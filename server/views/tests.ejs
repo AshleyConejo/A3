@@ -1,0 +1,42 @@
+<%- include partials/header.ejs %>
+ <%- include partials/main_nav.ejs %> 
+  
+   
+<main>
+
+<div class="header-text">
+ <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1>Final Exam Schedule 2023 </h1>  
+            <a href="/add" class="custom-button"> Add a Test </a>
+            <br>
+            <br>
+            <table class="custom-table">
+                <tr class="custom-table-row">
+                    <th class="custom-table-header">Class</th>
+                    <th class="custom-table-header">CRN</th>
+                    <th class="custom-table-header">Date</th>
+                    <th class="custom-table-header">Time</th>
+                    <th class="custom-table-header"></th>
+                    <th class="custom-table-header"></th>
+                </tr>
+                <% for (let count = 0; count < testClass.length; count++) { %>    
+                    <tr class="custom-table-row">
+                        <td class="custom-table-data"><%= testClass[count].Class %></td>
+                        <td class="custom-table-data"><%= testClass[count].CRN %></td>
+                        <td class="custom-table-data"><%= testClass[count].Date %></td>
+                        <td class="custom-table-data"><%= testClass[count].Time %></td>
+                        <td class="custom-table-data">
+                         <a href="/edit/<%= testClass[count]._id %>" class="edit-button custom-button">Edit</a> </td>
+                        <td class="custom-table-data">
+                        <a href="/test-list/delete/<%= testClass[count]._id %>"class="delete-button custom-button">Delete</a> </td>
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+  </div>
+</div>
+</main>
+<% include partials/bottom_nav.ejs %>
+<% include partials/footer.ejs %>

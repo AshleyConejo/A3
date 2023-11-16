@@ -1,0 +1,39 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %> 
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <h1><%= title %></h1>
+      <form class="form" method="post">
+
+
+        <div class="form-group">
+          <label for="nameTextField">Class Name</label>
+          <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Class Name" name="name" value="<%= test.name%>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nameTextField">CRN</label>
+          <input type="text" class="form-control" id="nameTextField" placeholder="Enter the CRN" CRN="name" value="<%= test.CRN%>"required>
+        </div>
+
+        <div class="form-group">
+          <label for="nameTextField">Date</label>
+          <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Date" date="name"  value="<%= test.date%>"required>
+        </div>
+
+        <div class="form-group">
+          <label for="nameTextField">Time</label>
+          <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Time" time="name" value="<%= test.time%>" required>
+        </div>
+
+         <div class="button-container">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/test-list" class="cancel-link">Cancel</a>
+    </div>
+
+<% include partials/bottom_nav.ejs %>
+<% include partials/footer.ejs %>
+
+  
